@@ -9,8 +9,11 @@ package cse365assign2;
 
  * modify the array by adding or removing elements, searching for a specific number, and 
 
- * a toString.
-
+ * a toString is ued to print the contents of methods as a string. In addition, append method was added to the 
+ 
+ * program which adds a number to the end of the list. If the list is initially full, add and append increases the list 
+ 
+ * capacity by 50%, while remove checks if 
 
 
  */
@@ -68,7 +71,7 @@ public class SimpleList {
 	
 
 	// this method searches for a specific number, remove it, shift the elements,
-	// and updates the count
+	// and updates the count. If more than 25% of the list is empty, it changes the capacity of the array to the current count
 
 	public void remove(int num) {
 
@@ -85,10 +88,11 @@ public class SimpleList {
 			}
 
 		}
-		
+		//75% cap
 		int cap= 3*list.length/4;
-		if(count <cap) {
-			arrayResize(count);
+		//checks if count has 25% empty places and list is not empty 
+		if(count <cap && count >0) {
+			arrayResize(count); //resize the list 
 		}
 
 	}
