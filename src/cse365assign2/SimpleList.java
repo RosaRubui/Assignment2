@@ -13,7 +13,7 @@ package cse365assign2;
  
  * program which adds a number to the end of the list. If the list is initially full, add and append increases the list 
  
- * capacity by 50%, while remove checks if 
+ * capacity by 50%, while remove resize the list if more than 25% of the list size is empty  
 
 
  */
@@ -135,7 +135,7 @@ public class SimpleList {
 			return -1; //if the list is empty it returns -1
 		return list[count-1];	//returns the last element otherwise 
 	}
-
+	//This method returns the size of the list 
 	public int size() {
 		return list.length;
 	}
