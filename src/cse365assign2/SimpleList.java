@@ -31,18 +31,18 @@ public class SimpleList {
 
 	}
 
-	// this methods adds a number the beginning of an array and updates the count as
-	// needed
+	// this methods adds a number the beginning of an array, moves the  updates the count as
+	// needed. If the list was initially full, it increases the size by 50%
 
 	void add(int num) {
 		int h=0;
-		
+		//checking if the list is full 
 		if (list.length == count) {
-			h= count/2;
-			arrayResize(h+count);
+			h= count/2;  
+			arrayResize(h+count); //calling resize and passing the size plus half of it 
 			
 		}
-
+			// this loop goes through each element in the list and moves them doen so there is room 
 			for (int i = list.length - 1; i > 0; i--) { 
 
 					list[i] = list[i - 1]; 
